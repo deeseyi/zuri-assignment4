@@ -15,6 +15,10 @@ const server = http.createServer((req, res) => {
 
         fs.createReadStream('./client/contact.html').pipe(res)
     }
+    if (req.url === '/home') {
+        res.writeHead(302, { 'Location': '/' });
+        res.end();  
+    }
   
 });
 
